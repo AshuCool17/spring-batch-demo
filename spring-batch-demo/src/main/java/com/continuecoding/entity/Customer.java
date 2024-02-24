@@ -38,5 +38,9 @@ public class Customer {
 	@Column
 	private String contactNumber;
 	
-
+	@Column
+	private String country;
+	
+	@Column
+	private String dob;
 }
