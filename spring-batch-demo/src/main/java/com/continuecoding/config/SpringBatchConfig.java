@@ -20,14 +20,12 @@ import lombok.AllArgsConstructor;
  */
 @Configuration
 @EnableBatchProcessing
+@AllArgsConstructor
 public class SpringBatchConfig {
 
-	@Autowired
 	private JobBuilderFactory jobBuilderFactory;
 	
-	@Autowired
 	private StepBuilderFactory stepBuilderFactory;
 	
-	@Autowired
 	private CustomerRepository customerRepository;	
 }
