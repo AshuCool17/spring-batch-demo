@@ -7,6 +7,9 @@ import org.springframework.batch.core.configuration.annotation.EnableBatchProces
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
 import org.springframework.batch.item.file.FlatFileItemReader;
+import org.springframework.batch.item.file.LineMapper;
+import org.springframework.batch.item.file.mapping.DefaultLineMapper;
+import org.springframework.batch.item.file.transform.DelimitedLineTokenizer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -41,6 +44,12 @@ public class SpringBatchConfig {
 		fileItemReader.setLinesToSkip(1);
 		fileItemReader.setLineMapper(lineMapper());
 		return fileItemReader;
+	}
+
+	private LineMapper<Customer> lineMapper() {
+		DefaultLineMapper<Customer> lineMapper = new DefaultLineMapper<>();
+		DelimitedLineTokenizer delimitedLineTokenizer = new DelimitedLineTokenizer();
+		return null;
 	}
 	
 }
