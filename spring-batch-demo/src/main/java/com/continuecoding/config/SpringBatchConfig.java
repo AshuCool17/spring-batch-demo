@@ -51,6 +51,7 @@ public class SpringBatchConfig {
 		DelimitedLineTokenizer delimitedLineTokenizer = new DelimitedLineTokenizer();
 		delimitedLineTokenizer.setDelimiter(",");
 		delimitedLineTokenizer.setStrict(false);
+		delimitedLineTokenizer.setNames("id","firstName");
 		return null;
 	}
 	
