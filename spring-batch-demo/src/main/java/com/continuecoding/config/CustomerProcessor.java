@@ -14,8 +14,7 @@ import com.continuecoding.entity.Customer;
 public class CustomerProcessor implements ItemProcessor<Customer, Customer>{
 
 	@Override
-	public Object process(Object item) throws Exception {
-		// TODO Auto-generated method stub
+	public Customer process(Customer item) throws Exception {
 		return null;
 	}
 
