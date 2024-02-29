@@ -64,7 +64,7 @@ public class SpringBatchConfig {
 	
 	@Bean
 	public CustomerProcessor processor() {
-		return new CustomerProcessor;
+		return new CustomerProcessor();
 	}
 	
 }
