@@ -62,4 +62,9 @@ public class SpringBatchConfig {
 		return lineMapper;
 	}
 	
+	@Bean
+	public CustomerProcessor processor() {
+		return null;
+	}
+	
 }
