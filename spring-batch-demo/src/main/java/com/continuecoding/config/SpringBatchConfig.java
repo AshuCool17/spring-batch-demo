@@ -67,4 +67,9 @@ public class SpringBatchConfig {
 		return new CustomerProcessor();
 	}
 	
+	@Bean
+	public RepositoryItemWriter<Customer> writer(){
+		return null;
+	}
+	
 }
