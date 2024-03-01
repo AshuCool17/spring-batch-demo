@@ -80,7 +80,9 @@ public class SpringBatchConfig {
 	public Step step1() {
 		return stepBuilderFactory.get("csv-step").<Customer,Customer>chunk(10)
 				.reader(reader())
-				.processor(null)
+				.processor(processor())
+				.writer(writer())
+				.build();
 	}
 	
 }
