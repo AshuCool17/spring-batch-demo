@@ -6,6 +6,7 @@ package com.continuecoding.config;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
 import org.springframework.batch.core.configuration.annotation.StepBuilderFactory;
+import org.springframework.batch.item.data.RepositoryItemWriter;
 import org.springframework.batch.item.file.FlatFileItemReader;
 import org.springframework.batch.item.file.LineMapper;
 import org.springframework.batch.item.file.mapping.BeanWrapperFieldSetMapper;
@@ -69,7 +70,10 @@ public class SpringBatchConfig {
 	
 	@Bean
 	public RepositoryItemWriter<Customer> writer(){
-		return null;
+		RepositoryItemWriter<Customer> writer = new RepositoryItemWriter<>();
+		writer.setRepository(customerRepository);
+		writer.setMethodName("save");
+		return writer;
 	}
 	
 }
