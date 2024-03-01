@@ -76,4 +76,11 @@ public class SpringBatchConfig {
 		return writer;
 	}
 	
+	@Bean
+	public Step step1() {
+		return stepBuilderFactory.get("csv-step").<Customer,Customer>chunk(10)
+				.reader(reader())
+				.processor(null)
+	}
+	
 }
