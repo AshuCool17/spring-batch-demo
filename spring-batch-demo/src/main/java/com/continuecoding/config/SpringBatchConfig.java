@@ -86,4 +86,11 @@ public class SpringBatchConfig {
 				.build();
 	}
 	
+	public Job runJob() {
+		return JobBuilderFactory.get("importCustomers")
+				.flow(step1())
+				.end()
+				.build();
+	}
+	
 }
