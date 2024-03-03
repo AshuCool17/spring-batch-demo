@@ -3,6 +3,7 @@
  */
 package com.continuecoding.config;
 
+import org.springframework.batch.core.Job;
 import org.springframework.batch.core.Step;
 import org.springframework.batch.core.configuration.annotation.EnableBatchProcessing;
 import org.springframework.batch.core.configuration.annotation.JobBuilderFactory;
@@ -87,7 +88,7 @@ public class SpringBatchConfig {
 	}
 	
 	public Job runJob() {
-		return JobBuilderFactory.get("importCustomers")
+		return jobBuilderFactory.get("importCustomers")
 				.flow(step1())
 				.end()
 				.build();
