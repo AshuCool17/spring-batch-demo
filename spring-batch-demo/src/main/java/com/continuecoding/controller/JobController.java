@@ -20,4 +20,8 @@ public class JobController {
 	
 	@Autowired
 	private Job job;
+	
+	public void importCsvToDBJob() {
+		
+	}
 }
