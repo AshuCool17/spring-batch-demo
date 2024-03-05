@@ -30,5 +30,7 @@ public class JobController {
 		
 		JobParameters jobParameters = new JobParametersBuilder()
 				.addLong("startAt", System.currentTimeMillis());
+		
+		jobLauncher.run(job, jobParameters);
 	}
 }
