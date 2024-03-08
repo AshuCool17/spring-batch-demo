@@ -37,6 +37,7 @@ public class JobController {
 		
 		try {
 			jobLauncher.run(job, jobParameters);
+			
 		} catch (JobExecutionAlreadyRunningException | JobRestartException | JobInstanceAlreadyCompleteException
 				| JobParametersInvalidException e) {
 			e.printStackTrace();
